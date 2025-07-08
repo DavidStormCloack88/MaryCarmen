@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.ServiceModel.Primitives" Version="8.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MariaCarmen.Aplicacion.DTO\MariaCarmen.Aplicacion.DTO.csproj" />
+    <ProjectReference Include="..\MariaCarmen.Dominio.Modelos\MariaCarmen.Dominio.Modelos.csproj" />
+    <ProjectReference Include="..\MariaCarmen.Dominio.Servicios\MariaCarmen.Dominio.Servicios.csproj" />
+    <ProjectReference Include="..\MariaCarmen.Infraestructura.AccesoDatos\MariaCarmen.Infraestructura.AccesoDatos.csproj" />
+  </ItemGroup>
+
+</Project>

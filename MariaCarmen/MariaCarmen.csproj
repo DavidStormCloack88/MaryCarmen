@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MariaCarmen.Aplicacion.DTO\MariaCarmen.Aplicacion.DTO.csproj" />
+    <ProjectReference Include="..\MariaCarmen.Aplicacion\MariaCarmen.Aplicacion.csproj" />
+    <ProjectReference Include="..\MariaCarmen.Dominio.Modelos\MariaCarmen.Dominio.Modelos.csproj" />
+    <ProjectReference Include="..\MariaCarmen.Dominio.Servicios\MariaCarmen.Dominio.Servicios.csproj" />
+    <ProjectReference Include="..\MariaCarmen.Infraestructura.AccesoDatos\MariaCarmen.Infraestructura.AccesoDatos.csproj" />
+  </ItemGroup>
+
+</Project>
