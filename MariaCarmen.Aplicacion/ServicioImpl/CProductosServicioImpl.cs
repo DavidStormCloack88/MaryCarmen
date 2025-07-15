@@ -13,11 +13,13 @@ namespace MariaCarmen.Aplicacion.ServicioImpl
 {
     public class CProductosServicioImpl : IProductoServicio
     {
-        private readonly IProductosRepositorio productosRepositorio;
+        private  IProductosRepositorio productosRepositorio;
+        private readonly MaryCarmenDBContext _MaryCarmenDBContext;
 
         public CProductosServicioImpl(MaryCarmenDBContext MaryCarmenDBContext)
         {
-            this.productosRepositorio = new ProductosRepositorioImpl(MaryCarmenDBContext);
+            _MaryCarmenDBContext = MaryCarmenDBContext;
+            productosRepositorio = new ProductosRepositorioImpl(_MaryCarmenDBContext);
         }
 
         public Task<List<ProductosDTO>> ListarProductoPorTipo()
@@ -37,13 +39,14 @@ namespace MariaCarmen.Aplicacion.ServicioImpl
 
         public Task<IEnumerable<productos>> ProductoGetAllAsync()
         {
-            throw new NotImplementedException();
+            return productosRepositorio.GetAllAsync();
         }
 
         public Task<productos> ProductoGetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return productosRepositorio.GetByIdAsync(id);
         }
+        
 
         public Task ProductoUpdateAsync(productos Entity)
         {

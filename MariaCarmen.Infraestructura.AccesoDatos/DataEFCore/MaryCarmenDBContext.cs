@@ -35,12 +35,13 @@ public partial class MaryCarmenDBContext : DbContext
 
     public virtual DbSet<ventas> ventas { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    /*protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Data Source=DESKTOP-05HME1I;Initial Catalog=MaryCarmenBD;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
-
+    */
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+
         modelBuilder.Entity<categoria>(entity =>
         {
             entity.HasKey(e => e.id_categoria).HasName("PK__categori__CD54BC5AC0EB526E");
@@ -110,6 +111,12 @@ public partial class MaryCarmenDBContext : DbContext
 
             entity.HasOne(d => d.id_categoriaNavigation).WithMany(p => p.productos)
                 .HasForeignKey(d => d.id_categoria)
+                .HasConstraintName("FK__productos__id_ca__5535A963");
+            // MODIFICACIÓN CLAVE: Configuración de eliminación
+            entity.HasOne(d => d.id_categoriaNavigation)
+                .WithMany(p => p.productos)
+                .HasForeignKey(d => d.id_categoria)
+                .OnDelete(DeleteBehavior.ClientSetNull) // Cambiado a ClientSetNull
                 .HasConstraintName("FK__productos__id_ca__5535A963");
         });
 
@@ -221,6 +228,7 @@ public partial class MaryCarmenDBContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__ventas__id_sucur__59FA5E80");
         });
+
 
         OnModelCreatingPartial(modelBuilder);
     }

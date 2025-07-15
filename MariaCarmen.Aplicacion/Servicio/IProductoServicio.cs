@@ -17,6 +17,7 @@ namespace MariaCarmen.Aplicacion.Servicio
         Task ProductoUpdateAsync(productos Entity);//actualizar
         [OperationContract]
         Task ProductoDeleteAsync(int id);//eliminar por ID
+        
         [OperationContract]
         Task<IEnumerable<productos>> ProductoGetAllAsync();//listar todo
         [OperationContract]

@@ -40,14 +40,23 @@ namespace MariaCarmen.Infraestructura.AccesoDatos.Repositorio
             try
             {
                 var entity = await GetByIdAsync(id);
+
+                if (entity == null)
+                    throw new Exception("El elemento con ese ID no existe.");
+
                 _dbSet.Remove(entity);
                 await _dbContext.SaveChangesAsync();
             }
+            catch (DbUpdateException dbEx)
+            {
+                throw new Exception("No se pudo eliminar. Puede haber datos relacionados que lo impiden. " + dbEx.InnerException?.Message);
+            }
             catch (Exception e)
             {
-                throw new Exception("Error: No se pudo eliminar Datos " + e.Message);
+                throw new Exception("Error inesperado al eliminar: " + e.Message);
             }
         }
+
 
         public async Task<IEnumerable<T>> GetAllAsync()
         {
@@ -67,7 +76,7 @@ namespace MariaCarmen.Infraestructura.AccesoDatos.Repositorio
         {
             try
             {
-                return await _dbSet.FindAsync();
+                return await _dbSet.FindAsync(id);
             }
             catch (Exception e)
             {
