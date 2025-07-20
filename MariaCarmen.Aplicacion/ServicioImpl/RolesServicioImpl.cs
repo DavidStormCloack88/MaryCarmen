@@ -44,9 +44,9 @@ namespace MariaCarmen.Aplicacion.ServicioImpl
             return rolesRepositorio.GetByIdAsync(id);
         }
 
-        public async Task RolesUpdateAsync(roles Entity)
+        public async Task RolesUpdateAsync(roles TEntity)
         {
-            await rolesRepositorio.UpdateAsync(Entity);
+            await rolesRepositorio.UpdateAsync(TEntity);
         }
     }
 }

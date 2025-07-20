@@ -27,9 +27,9 @@ namespace MariaCarmen.Aplicacion.ServicioImpl
             return productosRepositorio.ListarProductosPorTipo();
         }
 
-        public Task ProductoAddAsync(productos TEntity)
+        public async Task ProductoAddAsync(productos TEntity)
         {
-            throw new NotImplementedException();
+            await productosRepositorio.AddAsync(TEntity);
         }
 
         public Task ProductoDeleteAsync(int id)
@@ -48,9 +48,9 @@ namespace MariaCarmen.Aplicacion.ServicioImpl
         }
         
 
-        public Task ProductoUpdateAsync(productos Entity)
+        public async Task ProductoUpdateAsync(productos Entity)
         {
-            throw new NotImplementedException();
+            await productosRepositorio.UpdateAsync(Entity);
         }
     }
 }

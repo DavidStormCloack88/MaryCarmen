@@ -23,6 +23,8 @@ builder.Services.AddDbContext<MaryCarmenDBContext>(options => options.UseSqlServ
 builder.Services.AddScoped<ICategoriaRepositorio, CategoriaRepositorioImpl>();
 builder.Services.AddScoped<ICategoriaServicio, CategoriaServicioImpl>();
 builder.Services.AddScoped<IProductoServicio, CProductosServicioImpl>();
+builder.Services.AddScoped<IRolesRepositorio, RolesRepositorioImpl>();
+builder.Services.AddScoped<IRolesServicio, RolesServicioImpl>();
 
 // Habilitar CORS (opcional)
 builder.Services.AddCors();

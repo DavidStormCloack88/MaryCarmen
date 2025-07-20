@@ -37,12 +37,12 @@ namespace MariaCarmen.Aplicacion.ServicioImpl
 
         public Task<IEnumerable<sucursales>> SucursalesGetAllAsync()
         {
-            throw new NotImplementedException();
+            return _sucursalesRepositorio.GetAllAsync();
         }
 
         public Task<sucursales> SucursalesGetByIdAseync(int id)
         {
-            throw new NotImplementedException();
+            return _sucursalesRepositorio.GetByIdAsync(id);
         }
 
         public Task SucursalesUpdateAsync(sucursales Entity)
