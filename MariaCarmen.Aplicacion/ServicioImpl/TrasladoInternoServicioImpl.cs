@@ -26,9 +26,9 @@ namespace MariaCarmen.Aplicacion.ServicioImpl
             return _trasladointernoRepositorio.listadetallefecha();
         }
 
-        public Task TrasladoInternoAddAsync(traslados_internos TEntity)
+        public async Task TrasladoInternoAddAsync(traslados_internos TEntity)
         {
-            throw new NotImplementedException();
+            await _trasladointernoRepositorio.AddAsync(TEntity);
         }
 
         public Task TrasladoInternoDeleteAsync(int id)
@@ -38,17 +38,17 @@ namespace MariaCarmen.Aplicacion.ServicioImpl
 
         public Task<IEnumerable<traslados_internos>> TrasladoInternoGetAllAsync()
         {
-            throw new NotImplementedException();
+            return _trasladointernoRepositorio.GetAllAsync();
         }
 
         public Task<traslados_internos> TrasladoInternoGetByIdAseync(int id)
         {
-            throw new NotImplementedException();
+            return _trasladointernoRepositorio.GetByIdAsync(id);
         }
 
-        public Task TrasladoInternoUpdateAsync(traslados_internos Entity)
+        public async Task TrasladoInternoUpdateAsync(traslados_internos Entity)
         {
-            throw new NotImplementedException();
+            await _trasladointernoRepositorio.UpdateAsync(Entity);
         }
     }
 }

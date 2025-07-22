@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace MariaCarmen.Infraestructura.AccesoDatos;
 
@@ -20,10 +21,10 @@ public partial class productos
     public string categoria { get; set; }
 
     public int? id_categoria { get; set; }
-
+    [JsonIgnore]
     public virtual ICollection<detalle_traslado> detalle_traslado { get; set; } = new List<detalle_traslado>();
-
+    [JsonIgnore]
     public virtual ICollection<detalle_venta> detalle_venta { get; set; } = new List<detalle_venta>();
-
+    [JsonIgnore]
     public virtual categoria id_categoriaNavigation { get; set; }
 }

@@ -25,9 +25,9 @@ namespace MariaCarmen.Aplicacion.ServicioImpl
             return _usuariosRepositorio.ListaPorRol();
         }
 
-        public Task UsuarioAddAsync(usuarios TEntity)
+        public async Task UsuarioAddAsync(usuarios TEntity)
         {
-            throw new NotImplementedException();
+            await _usuariosRepositorio.AddAsync(TEntity);
         }
 
         public Task UsuarioDeleteAsync(int id)
@@ -37,17 +37,17 @@ namespace MariaCarmen.Aplicacion.ServicioImpl
 
         public Task<IEnumerable<usuarios>> UsuarioGetAllAsync()
         {
-            throw new NotImplementedException();
+            return _usuariosRepositorio.GetAllAsync();
         }
 
         public Task<usuarios> UsuarioGetByIdAseync(int id)
         {
-            throw new NotImplementedException();
+            return _usuariosRepositorio.GetByIdAsync(id);
         }
 
-        public Task UsuarioUpdateAsync(usuarios Entity)
+        public async Task UsuarioUpdateAsync(usuarios Entity)
         {
-            throw new NotImplementedException();
+            await _usuariosRepositorio.UpdateAsync(Entity);
         }
     }
 }

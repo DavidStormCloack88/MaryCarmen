@@ -55,19 +55,15 @@ namespace MariaCarmen.Controllers
         }
 
         // PUT: api/categoria/5
-        [HttpPut("{id}/{nombre}/{tipo?}")]  // 'tipo' es opcional
-        public async Task<IActionResult> Update(
-            [FromRoute] int id,
-            [FromRoute] string nombre,
-            [FromRoute] string? tipo)
+        // 'tipo' es opcional
+        [HttpPut]
+        public async Task<IActionResult> ActualizarCategoria(int id, [FromBody] categoria cat)
         {
-            var categoria = new categoria
-            {
-                id_categoria = id,
-                nombre_categoria = nombre,
-                tipo_categoria = tipo
-            };
-            await _categoriaServicio.CategoriaUpdateAsync(categoria);
+            if (id != cat.id_categoria)
+                return BadRequest();
+
+            await _categoriaServicio.CategoriaUpdateAsync(cat);
+
             return NoContent();
         }
 

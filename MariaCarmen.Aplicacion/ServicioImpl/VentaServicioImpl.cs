@@ -30,9 +30,9 @@ namespace MariaCarmen.Aplicacion.ServicioImpl
             return _ventaRepositorio.OrdenFecha();
         }
 
-        public Task VentaAddAsync(ventas TEntity)
+        public async Task VentaAddAsync(ventas TEntity)
         {
-            throw new NotImplementedException();
+            await _ventaRepositorio.AddAsync(TEntity);
         }
 
         public Task VentaDeleteAsync(int id)
@@ -47,12 +47,12 @@ namespace MariaCarmen.Aplicacion.ServicioImpl
 
         public Task<ventas> VentaGetByIdAseync(int id)
         {
-            throw new NotImplementedException();
+            return _ventaRepositorio.GetByIdAsync(id);
         }
 
-        public Task VentaUpdateAsync(ventas Entity)
+        public async Task VentaUpdateAsync(ventas Entity)
         {
-            throw new NotImplementedException();
+            await _ventaRepositorio.UpdateAsync(Entity);
         }
     }
 }

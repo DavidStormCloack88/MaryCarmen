@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace MariaCarmen.Infraestructura.AccesoDatos;
 
@@ -20,10 +21,10 @@ public partial class traslados_internos
     public string estado { get; set; }
 
     public int? id_usuario_recibe { get; set; }
-
+    [JsonIgnore]
     public virtual ICollection<detalle_traslado> detalle_traslado { get; set; } = new List<detalle_traslado>();
-
+    [JsonIgnore]
     public virtual sucursales id_sucursal_destinoNavigation { get; set; }
-
+    [JsonIgnore]
     public virtual usuarios id_usuario_recibeNavigation { get; set; }
 }

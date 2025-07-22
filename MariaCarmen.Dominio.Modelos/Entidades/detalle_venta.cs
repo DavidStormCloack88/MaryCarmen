@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace MariaCarmen.Infraestructura.AccesoDatos;
 
@@ -18,8 +19,8 @@ public partial class detalle_venta
     public decimal precio_unitario_venta { get; set; }
 
     public decimal subtotal { get; set; }
-
+    [JsonIgnore]
     public virtual productos id_productoNavigation { get; set; }
-
+    [JsonIgnore]
     public virtual ventas id_ventaNavigation { get; set; }
 }

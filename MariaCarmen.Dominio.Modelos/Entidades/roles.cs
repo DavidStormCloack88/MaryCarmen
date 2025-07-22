@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace MariaCarmen.Infraestructura.AccesoDatos;
 
@@ -12,6 +13,6 @@ public partial class roles
     public string nombre_rol { get; set; }
 
     public string descripcion { get; set; }
-
+    [JsonIgnore]
     public virtual ICollection<usuarios> usuarios { get; set; } = new List<usuarios>();
 }

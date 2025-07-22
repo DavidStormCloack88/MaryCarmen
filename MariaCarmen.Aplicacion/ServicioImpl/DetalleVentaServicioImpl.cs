@@ -20,9 +20,9 @@ namespace MariaCarmen.Aplicacion.ServicioImpl
             this._detalleVentasRepositorio = new DetalleVentaRepositorioImpl(MaryCarmenDBContext);  
         }
 
-        public Task DetalleVentaAddAsync(detalle_venta TEntity)
+        public async Task DetalleVentaAddAsync(detalle_venta TEntity)
         {
-            throw new NotImplementedException();
+            await _detalleVentasRepositorio.AddAsync(TEntity);
         }
 
         public Task DetalleVentaDeleteAsync(int id)
@@ -37,12 +37,12 @@ namespace MariaCarmen.Aplicacion.ServicioImpl
 
         public Task<detalle_venta> DetalleVentaGetByIdAseync(int id)
         {
-            throw new NotImplementedException();
+            return _detalleVentasRepositorio.GetByIdAsync(id);
         }
 
-        public Task DetalleVentaUpdateAsync(detalle_venta Entity)
+        public async Task DetalleVentaUpdateAsync(detalle_venta Entity)
         {
-            throw new NotImplementedException();
+            await _detalleVentasRepositorio.UpdateAsync(Entity);
         }
 
         public Task<List<detalle_venta>> FiltrarCantidadVenta()

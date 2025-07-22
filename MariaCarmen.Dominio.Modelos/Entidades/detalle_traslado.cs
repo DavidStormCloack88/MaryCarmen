@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace MariaCarmen.Infraestructura.AccesoDatos;
 
@@ -14,8 +15,8 @@ public partial class detalle_traslado
     public int id_producto { get; set; }
 
     public int cantidad { get; set; }
-
+    [JsonIgnore]
     public virtual productos id_productoNavigation { get; set; }
-
+    [JsonIgnore]
     public virtual traslados_internos id_trasladoNavigation { get; set; }
 }

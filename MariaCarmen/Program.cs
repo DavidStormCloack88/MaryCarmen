@@ -25,6 +25,21 @@ builder.Services.AddScoped<ICategoriaServicio, CategoriaServicioImpl>();
 builder.Services.AddScoped<IProductoServicio, CProductosServicioImpl>();
 builder.Services.AddScoped<IRolesRepositorio, RolesRepositorioImpl>();
 builder.Services.AddScoped<IRolesServicio, RolesServicioImpl>();
+builder.Services.AddScoped<ISucursalesRepositorio, SucursalRepositorioImpl>();
+builder.Services.AddScoped<ISucursalesServicio, SucursalesServicioImpl>();
+builder.Services.AddScoped<IVentaRepositorio, VentaRepositorioImpl>();
+builder.Services.AddScoped<IVentaServicio, VentaServicioImpl>();
+builder.Services.AddScoped<IUsuariosRepositorio, UsuarioRepositorioImpl>();
+builder.Services.AddScoped<IUsuarioServicio, UsuarioServicioImpl>();
+builder.Services.AddScoped<ITrasladoInternoRepositorio, TrasladoInternoRepositorioImpl>();
+builder.Services.AddScoped<ITrasladoInternoServicio,  TrasladoInternoServicioImpl>();
+builder.Services.AddScoped<IDetalleVentasRepositorio, DetalleVentaRepositorioImpl>();
+builder.Services.AddScoped<IDetalleVentaServicio, DetalleVentaServicioImpl>();
+
+
+
+
+
 
 // Habilitar CORS (opcional)
 builder.Services.AddCors();

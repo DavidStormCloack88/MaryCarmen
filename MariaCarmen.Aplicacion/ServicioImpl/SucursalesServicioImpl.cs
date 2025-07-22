@@ -25,9 +25,9 @@ namespace MariaCarmen.Aplicacion.ServicioImpl
             return _sucursalesRepositorio.ListarporSucursal();
         }
 
-        public Task SucursalesAddAsync(sucursales TEntity)
+        public async Task SucursalesAddAsync(sucursales TEntity)
         {
-            throw new NotImplementedException();
+            await _sucursalesRepositorio.AddAsync(TEntity);
         }
 
         public Task SucursalesDeleteAsync(int id)
@@ -45,9 +45,9 @@ namespace MariaCarmen.Aplicacion.ServicioImpl
             return _sucursalesRepositorio.GetByIdAsync(id);
         }
 
-        public Task SucursalesUpdateAsync(sucursales Entity)
+        public async Task SucursalesUpdateAsync(sucursales Entity)
         {
-            throw new NotImplementedException();
+            await _sucursalesRepositorio.UpdateAsync(Entity);
         }
     }
 }

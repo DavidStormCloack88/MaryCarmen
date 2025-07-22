@@ -36,12 +36,12 @@ namespace MariaCarmen.Controllers
         {
             await _rolesServicio.RolesAddAsync(rol);
             return CreatedAtAction(nameof(GetById), new { id = rol.id_rol }, rol);
-        }
+        }   
 
-        // PUT: api/productos
+        // PUT: api/roles
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutRol(int id, [FromBody] roles rol)
+        [HttpPut]
+        public async Task<IActionResult> ActualizarRol(int id, [FromBody] roles rol)
         {
             if (id != rol.id_rol)
                 return BadRequest();
